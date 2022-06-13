@@ -1,4 +1,4 @@
-var fs = require('fs');
+var fs = require('filesystem');
 
 function readFile(srcPath) {
     fs.readFile(srcPath, 'utf8', function (err, data) {
@@ -19,16 +19,6 @@ function appendFile(savPath, data) {
 writeFile('./abc.txt', 'Abc Yhaoo My First File...');
 // readFile('./abc.txt');
 // appendFile('./abc.txt', 'Abc Yhaoo My First File... 123');
-
-
-
-
-
-
-
-
-
-
 
 // function readFile(srcPath) {
 //     return new Promise(function (resolve, reject) {

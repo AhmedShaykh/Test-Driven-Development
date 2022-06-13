@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('filesystem');
 
 // ** SYNC ** //
 // console.log('SYNC 1 ');
