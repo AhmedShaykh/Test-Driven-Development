@@ -1,4 +1,4 @@
-var fs = require('filesystem');
+var fs = require('fs');
 
 function readFile(srcPath) {
     fs.readFile(srcPath, 'utf8', function (err, data) {
@@ -16,7 +16,7 @@ function appendFile(savPath, data) {
     });
 }
 
-writeFile('./abc.txt', 'Abc Yhaoo My First File...');
+writeFile('./abc.txt', 'Abc Yahoo My First File...');
 // readFile('./abc.txt');
 // appendFile('./abc.txt', 'Abc Yhaoo My First File... 123');
 
