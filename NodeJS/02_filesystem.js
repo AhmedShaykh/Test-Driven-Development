@@ -1,12 +1,14 @@
-var fs = require('fs');
+const fs = require('fs');
 
-// ** SYNC **
-// console.log('SYNC 1 ')
-// var files = fs.readdirSync('./');  // 10min IO BLOCK
+// ** SYNC ** //
+// console.log('SYNC 1 ');
+
+// var files = fs.readdirSync('./');  // 10min I/O BLOCK
 // console.log('SYNC 2', files);
 
-// ** ASYNC **
+// ** ASYNC ** //
 console.log('ASYNC 1');
+
 fs.readdir('./', function (err, files) {
     if (err) {
         console.log('Err: ', err)
@@ -14,4 +16,5 @@ fs.readdir('./', function (err, files) {
         console.log('Files: ', files);
     }
 })
+
 console.log('ASYNC 2');
