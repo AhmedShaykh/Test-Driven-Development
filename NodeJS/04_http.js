@@ -1,4 +1,5 @@
 var http = require('http');
+
 var courses = [{ id: 1, name: 'JS' }, { id: 2, name: 'node' }];
 var users = ['userA', 'userB'];
 
@@ -12,16 +13,15 @@ var server = http.createServer(function (request, response) {
         response.write(JSON.stringify(users));
         response.end();
     } else {
-        response.write('<h1>Hello World</h1> <h2>' + request.url + '</h2>');
+        response.write('<h1>Server 404</h1><h2>' + request.url + '</h2>');
         response.end();
     }
 })
-//.listen(3001);
+
+server.listen(3001);
 
 // var server = http.createServer(function(request, response){
 //     console.log('Got a Request! ');
-
-//     
 
 //     if (request.url === '/') {
 // set response header
@@ -45,4 +45,4 @@ var server = http.createServer(function (request, response) {
 
 // });
 
-server.listen(3002);
+// server.listen(3002);
