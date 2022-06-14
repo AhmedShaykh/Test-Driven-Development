@@ -16,7 +16,7 @@ function appendFile(savPath, data) {
     });
 }
 
-writeFile('./abc.txt', 'Yahoo! My First File...');
+writeFile('./abc.txt', 'Yahoo! My First Data Save In File...');
 // readFile('./abc.txt');
 // appendFile('./abc.txt', 'Abc Yhaoo My First File... 123');
 
