@@ -1,7 +1,6 @@
 var http = require('http');
 var fs = require('fs');
 
-
 function sendFile(path, res, mime) {
   fs.readFile(path, function (err, data) {
     if (err) {
@@ -14,7 +13,6 @@ function sendFile(path, res, mime) {
     res.end(data.toString());
   });
 }
-
 
 http.createServer(function (req, res) {
 
@@ -31,4 +29,6 @@ http.createServer(function (req, res) {
     res.end();
   });
 
-}).listen(8080);
+})
+
+.listen(8080);
