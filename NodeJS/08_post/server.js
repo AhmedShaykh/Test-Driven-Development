@@ -4,18 +4,6 @@ var qs = require('querystring');
 
 const usersList = [{id: 1, name: 'Abc'}, {id: 2, name: 'xyz'}];
 
-
-// GET      ALL FETCH SELET         ALL TODOS
-// GET/id   GET SPECIFIC RECORD     TODO
-// POST     INSERT/CREATE           ADD
-// PUT      UPDATE                  UPDATE
-// DELETE   DELETE                  DELETE
-
-
-// Application Routes/Requests:
-//      Get:   /     /users     /user       /user/id
-//      Post:  /user
-
 http.createServer(function (req, res) {
 
     if (req.url == '/users' && req.method == "GET") {
@@ -28,9 +16,9 @@ http.createServer(function (req, res) {
         var body = '';
         req.on('data', function (data) {
             body += data;
-            // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB
+            // 1e6 === 1 * Math.pow(10, 6) === 1 * 1000000 ~~~ 1MB //
             if (body.length > 1e6) {
-                // FLOOD ATTACK OR FAULTY CLIENT, NUKE REQUEST
+                // FLOOD ATTACK OR FAULTY CLIENT, NUKE REQUEST //
                 request.connection.destroy();
             }
         });
@@ -41,7 +29,6 @@ http.createServer(function (req, res) {
             res.write(JSON.stringify(POST));
             res.end();
         });
-
         return;
     }
 
@@ -69,11 +56,11 @@ http.createServer(function (req, res) {
         return;
     }
 
-    // res.writeHead(200, {
-    //     'Content-Type': 'text/html'
-    // });
-    // res.write('Invalid Route');
-    // res.end();
+    res.writeHead(200, {
+        'Content-Type': 'text/html'
+    });
+    res.write('Invalid Route');
+    res.end();
 
-
-}).listen(8080);
+})
+.listen(8080);
