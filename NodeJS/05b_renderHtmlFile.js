@@ -4,7 +4,6 @@ var fs = require('fs');
 function sendFile(path, res, mime) {
   fs.readFile(path, function (err, data) {
     if (err) {
-      // errorHandling(err, res);
       return;
     }
     res.writeHead(200, {
@@ -15,13 +14,12 @@ function sendFile(path, res, mime) {
 }
 
 http.createServer(function (req, res) {
-
   if (req.url == '/demoscript.js') {
     sendFile('./demoscript.js', res, 'text/javascript');
     return;
   }
 
-  fs.readFile('demofile1.html', function (err, data) {
+  fs.readFile('demofile.html', function (err, data) {
     res.writeHead(200, {
       'Content-Type': 'text/html'
     });
@@ -31,4 +29,4 @@ http.createServer(function (req, res) {
 
 })
 
-.listen(8080);
+.listen(8000);
