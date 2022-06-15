@@ -4,7 +4,6 @@ const app = express();
 
 app.set('port', process.env.PORT || 3000);
 
-// static folder
 app.use('/public', express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
