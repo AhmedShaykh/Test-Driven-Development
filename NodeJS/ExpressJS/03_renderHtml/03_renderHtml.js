@@ -1,5 +1,5 @@
 const express = require('express');
-// const path = require('path');
+const path = require('path');
 const app = express();
 
 app.set('port', process.env.PORT || 3000);
@@ -7,8 +7,8 @@ app.set('port', process.env.PORT || 3000);
 app.use('/public', express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
-    res.sendFile('index.html', { root: __dirname });
-    // res.sendFile('welcome.html', {root: path.join(__dirname, './pages')});
+    // res.sendFile('index.html', { root: __dirname });
+    res.sendFile('welcome.html', {root: path.join(__dirname, './pages')});
 });
 
 app.get('/users', function (req, res) {
