@@ -9,10 +9,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.get('/', function (req, res) {
-    res.json(req.query);
+    // res.json(req.query);
+    res.sendFile('index.html', { root: __dirname });
 });
 
-app.post('/', (req, res) => {
+// app.post('/', (req, res) => {
+app.post('/user', (req, res) => {
     console.log('req.body', req.body)
     res.end(JSON.stringify(req.body));
 });
