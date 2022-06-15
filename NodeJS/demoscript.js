@@ -1,1 +1,1 @@
-alert('hellow World from demoScript.......');
+console.log('Hellow World from DemoScript.......');
