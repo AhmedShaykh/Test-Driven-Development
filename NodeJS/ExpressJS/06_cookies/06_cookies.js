@@ -7,7 +7,7 @@ app.use(cookieParser());
 
 app.get('/', function (req, res) {
     res.cookie('myFirstCookie', 'Looks Good');
-    res.send('Cookies...!');        // check in browser document.cookie
+    res.send('Cookies...!');
 });
 
 app.get('/clearCookie', function (req, res) {
