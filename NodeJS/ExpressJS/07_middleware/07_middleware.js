@@ -27,7 +27,7 @@ app.use(notDefineRoute);
 
 function errorHandler(err, req, res, next) {
     if (err) {
-        res.send('Errror: ' + err)
+        res.send('' + err)
     }
 }
 

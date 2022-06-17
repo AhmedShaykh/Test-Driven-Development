@@ -10,13 +10,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+
 app.use(sessions({
     secret: '&jh&B7H8^&^&*&^76FG&^f',
     resave: false,
     saveUninitialized: true
 }));
 
-// static folder
 app.use('/public', express.static(__dirname + '/public'));
 
 app.get('/', function (req, res) {
@@ -56,7 +56,7 @@ app.get('/redirects', function (req, res) {
 app.get('/admin', function (req, res) {
     session = req.session;
     if (session.uniqueID) {
-        res.send('Wow you are Admin.....!!  <a href="/logout">Logout</a>')
+        res.send('Welcome Admin.....!!  <a href="/logout">Logout</a>')
     } else {
         res.send('Who are you??');
     };
@@ -72,7 +72,6 @@ app.get('/logout', function (req, res) {
 app.get('*', function (req, res) {
     res.end('What Exactly you want?');
 });
-
 
 app.listen(3000, function () {
     console.log(`Express Started on: http://localhost:${3000}`);
