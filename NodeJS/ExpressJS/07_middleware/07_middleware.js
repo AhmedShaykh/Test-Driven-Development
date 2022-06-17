@@ -23,6 +23,7 @@ app.get('/error', function (req, res, next) {
 function notDefineRoute(req, res, next) {
     res.send('404 not Found');
 }
+
 app.use(notDefineRoute);
 
 function errorHandler(err, req, res, next) {

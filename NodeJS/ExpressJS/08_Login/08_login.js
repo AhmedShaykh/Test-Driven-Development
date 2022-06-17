@@ -49,7 +49,7 @@ app.get('/redirects', function (req, res) {
     if (session.uniqueID) {
         res.redirect('/admin');
     } else {
-        res.send('Who are you??');
+        res.send('Who Are You ???');
     }
 });
 
@@ -58,7 +58,7 @@ app.get('/admin', function (req, res) {
     if (session.uniqueID) {
         res.send('Welcome Admin.....!!  <a href="/logout">Logout</a>')
     } else {
-        res.send('Who are you??');
+        res.redirect('/login');
     };
 });
 
