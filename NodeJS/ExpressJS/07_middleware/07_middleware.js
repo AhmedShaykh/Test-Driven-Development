@@ -25,14 +25,13 @@ function notDefineRoute(req, res, next) {
 }
 app.use(notDefineRoute);
 
-
 function errorHandler(err, req, res, next) {
     if (err) {
         res.send('Errror: ' + err)
     }
 }
-app.use(errorHandler);
 
+app.use(errorHandler);
 
 app.listen(3000, function () {
     console.log(`Express Server Started on: http://localhost:3000`);
