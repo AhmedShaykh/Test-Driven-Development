@@ -1,13 +1,6 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render } from '@testing-library/react';
 import Data from './Data';
-
-test('renders React TypeScript', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/React TypeScript With Testing Component's/i);
-  expect(linkElement).toBeInTheDocument();
-});
 
 test('check testing data', () => {
   const renderResponse = render(<Data />);
